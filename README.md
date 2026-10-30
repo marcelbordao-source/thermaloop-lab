@@ -12,7 +12,7 @@ Permitir que estudantes, professores e visitantes compreendam, de maneira visual
 
 ## Funcionalidades
 
-- controles de temperatura da fonte e da água de entrada, vazão, efetividade, horas de operação e tarifa de referência;
+- controles de temperatura da fonte (45 a 2.000 °C) e da água de entrada, vazão, efetividade, horas de operação e tarifa de referência;
 - diagrama animado de máquina, trocador, circuito de água e indicadores térmicos;
 - cálculo em tempo real de temperatura de saída, variação de temperatura, potência (kW), energia (kWh) e equivalência financeira;
 - gráfico da influência da vazão na potência recuperada;
@@ -38,7 +38,7 @@ O modelo aplica:
 
 `P = ṁ × cp × ΔT`
 
-em que `ε` é a efetividade, `ṁ` é a vazão mássica aproximada e `cp` da água é 4,186 kJ/(kg·°C). A vazão em L/min é aproximada a kg/min. A temperatura de saída é limitada à da fonte para representar um trocador passivo. Consulte [a documentação do modelo](docs/MODELO-TERMICO.md) para hipóteses, unidades e limitações.
+em que `ε` é a efetividade, `ṁ` é a vazão mássica aproximada e `cp` da água é 4,186 kJ/(kg·°C). A vazão em L/min é aproximada a kg/min. A temperatura de saída é limitada à fonte e a 100 °C para representar água líquida em circuito não pressurizado; acima desse ponto, vapor, pressão e calor latente não são modelados. Consulte [a documentação do modelo](docs/MODELO-TERMICO.md) para hipóteses, unidades e limitações.
 
 ## Desenvolvimento local
 

@@ -5,8 +5,10 @@
 `tests.js` contém verificações do modelo:
 
 1. cenário de referência: temperatura de saída e potência esperadas;
-2. ausência de calor transferido quando a fonte está mais fria que a entrada;
-3. limite de saída abaixo ou igual à fonte térmica.
+2. faixa ampliada da fonte: 95, 150, 300, 500, 1.000, 1.500 e 2.000 °C;
+3. limite de água líquida: a saída e a potência sensível são limitadas a 100 °C, com alerta quando a saída ideal excede esse ponto;
+4. ausência de calor transferido quando a fonte está mais fria que a entrada;
+5. limite de saída abaixo ou igual à fonte térmica.
 
 Para executar quando o Node.js estiver disponível: `node tests.js`.
 

@@ -4,7 +4,9 @@ O ThermaLoop Lab é uma simulação conceitual. Para cada cenário, assume-se um
 
 ## Equações
 
-`T_saida = T_entrada + ε × (T_fonte − T_entrada)`
+`T_ideal = T_entrada + ε × (T_fonte − T_entrada)`
+
+`T_saida = min(T_fonte, T_ideal, 100 °C)`
 
 `P = ṁ × cp × (T_saida − T_entrada)`
 
@@ -12,7 +14,9 @@ onde `ε` é a efetividade (0–1), `ṁ = vazão/60` em kg/s e `P` é apresenta
 
 ## Salvaguardas físicas
 
-O modelo limita a temperatura de saída à temperatura da fonte e não permite potência negativa. Assim, não representa água saindo mais quente que a fonte num trocador passivo.
+O controle da fonte cobre 45–2.000 °C. O modelo limita a saída à temperatura da fonte, impede potência negativa e, para não apresentar água líquida superaquecida como condição viável, limita a saída a 100 °C. A parcela acima desse limite não é contabilizada como potência recuperada: exigiria modelagem de ebulição, calor latente, pressão, vazão de vapor e equipamentos apropriados.
+
+Acima de 100 °C, água em pressão atmosférica entra em ebulição. Acima da temperatura crítica da água (aproximadamente 374 °C), não há água líquida mesmo sob pressão. Fontes entre 500 e 2.000 °C demandariam análise de materiais, radiação, dilatação, vedação, isolamento e segurança. Esses cenários permanecem disponíveis para estudo conceitual, mas não são validados como instalações viáveis.
 
 ## Limitações
 
